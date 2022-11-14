@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="ITTSpeechF.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:ITTSpeechF"
+    Shell.FlyoutBehavior="Disabled">
+
+    <ShellContent
+        Title="Home"
+        ContentTemplate="{DataTemplate local:MainPage}"
+        Route="MainPage" />
+    <Shell.TitleView >
+        <Grid  BackgroundColor="#472c74">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"></RowDefinition>
+
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <ImageButton Source="C:\Users\sinoa\Documents\development\web\Icons\menu.png" 
+                    HeightRequest="24" 
+                    WidthRequest="24" 
+                    Grid.Column="0" 
+                    HorizontalOptions="Start"
+                    VerticalOptions="Center"
+                    Background="#472c74"
+                    />
+            <Label Grid.Column="1"
+                   Text="ITTSpeech"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center"
+                   FontSize="24"
+                   FontAttributes="Bold"/>
+            <ImageButton Source="C:\Users\sinoa\Documents\development\web\Icons\information.png" 
+                    HeightRequest="24" 
+                    WidthRequest="24" 
+                    Grid.Column="2" 
+                    HorizontalOptions="End"
+                    VerticalOptions="Center"
+                    BackgroundColor="#472c74"
+                    
+                    />
+        </Grid>
+        
+    </Shell.TitleView>
+
+</Shell>
