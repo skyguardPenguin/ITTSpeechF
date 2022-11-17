@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Grid xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ITTSpeechF.Controls.User.NewContent1"
+           >
+    <Border
+                WidthRequest="180"
+                HeightRequest="180"
+                StrokeThickness="5"
+                BackgroundColor="#ada1c1"
+                Stroke="#5c4484"
+                Margin="0,17,0,0"
+                
+                
+                >
+        <Border.StrokeShape  >
+            <Ellipse ></Ellipse>
+
+        </Border.StrokeShape>
+
+
+    </Border>
+    <Image Source="https://i.imgur.com/QyDFHnn.png"
+                   WidthRequest="125"
+                   HeightRequest="134"
+                   Aspect="AspectFit"
+                   VerticalOptions="Center"
+                   Margin="0,17,0,0"/>
+
+</Grid>

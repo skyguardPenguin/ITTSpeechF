@@ -21,7 +21,7 @@
                 <ColumnDefinition Width="*"></ColumnDefinition>
                 <ColumnDefinition Width="*"></ColumnDefinition>
             </Grid.ColumnDefinitions>
-            <ImageButton Source="C:\Users\sinoa\Documents\development\web\Icons\menu.png" 
+            <ImageButton Source="https://i.imgur.com/PbknVPp.png" 
                     HeightRequest="24" 
                     WidthRequest="24" 
                     Grid.Column="0" 
@@ -34,16 +34,17 @@
                    HorizontalOptions="Center"
                    VerticalOptions="Center"
                    FontSize="24"
-                   FontAttributes="Bold"/>
-            <ImageButton Source="C:\Users\sinoa\Documents\development\web\Icons\information.png" 
+                   FontAttributes="Bold"
+                   FontFamily="YesevaOne/Bold.ttf"/>
+            <ImageButton Source="https://i.imgur.com/zoSqidM.png" 
                     HeightRequest="24" 
                     WidthRequest="24" 
                     Grid.Column="2" 
                     HorizontalOptions="End"
                     VerticalOptions="Center"
-                    BackgroundColor="#472c74"
-                    
+                    BackgroundColor="#472c74"                    
                     />
+            
         </Grid>
         
     </Shell.TitleView>
