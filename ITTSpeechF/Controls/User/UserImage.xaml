@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Grid xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="ITTSpeechF.Controls.User.NewContent1"
+             x:Class="ITTSpeechF.Controls.User.UserImage"
            >
-    <Border
+    <Grid.RowDefinitions>
+        <RowDefinition Height="auto"></RowDefinition>
+        <RowDefinition Height="auto"></RowDefinition>
+    </Grid.RowDefinitions>
+    <Border Grid.Row="0"
                 WidthRequest="180"
                 HeightRequest="180"
                 StrokeThickness="5"
@@ -20,11 +24,22 @@
 
 
     </Border>
-    <Image Source="https://i.imgur.com/QyDFHnn.png"
+    <Image Grid.Row="0" Source="https://i.imgur.com/QyDFHnn.png"
                    WidthRequest="125"
                    HeightRequest="134"
                    Aspect="AspectFit"
                    VerticalOptions="Center"
                    Margin="0,17,0,0"/>
+
+    <Label Grid.Row="1"
+           Text="Luis Cruz" 
+           TextColor="#5c4484" 
+           HorizontalOptions="Center"
+           VerticalOptions="Start"
+           FontAttributes="Bold"
+           FontSize="Subtitle"
+            Margin="0,15,0,0"
+           FontFamily="YesevaOne/Bold.ttf"
+           ></Label>
 
 </Grid>

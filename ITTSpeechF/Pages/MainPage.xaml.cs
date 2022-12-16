@@ -1,29 +1,86 @@
-﻿namespace ITTSpeechF;
+﻿
+
+using Microsoft.Maui.Controls;
+using ITTSpeechF.Util.Recording.Windows;
+using ITTSpeechF.Util.Requesting;
+using CommunityToolkit.Maui.Alerts;
+using CommunityToolkit.Maui.Core;
+using CommunityToolkit.Maui.Views;
+using ITTSpeechF.Controls.Popups;
+
+namespace ITTSpeechF;
 
 public partial class MainPage : ContentPage
 {
-	int count = 0;
+    Recorder recorder;
+    bool flagTapStatus = false;
+    SPopup spopup;
+    public MainPage()
+    {
+        InitializeComponent();
+        spopup = new SPopup();
+    }
 
-	public MainPage()
-	{
-		InitializeComponent();
-		//imgButton.Source = "C:\\Users\\sinoa\\Documents\\development\\web\\Icons\\menu-button-of-three-horizontal-lines-white.png";
+    private void OnPointerEntered(object sender, PointerEventArgs e)
+    {
+
+        int a;
+
+        spopup = new SPopup();
+       
+
+
 
     }
 
-	private void OnCounterClicked(object sender, EventArgs e)
-	{
-		count++;
+    private void OnPointerExited(object sender, PointerEventArgs e)
+    {
+        if (recorder == null) return;
 
-		//if (count == 1)
-		//	CounterBtn.Text = $"Clicked {count} time";
-		//else
-		//	CounterBtn.Text = $"Clicked {count} times";
+    }
 
-		//SemanticScreenReader.Announce(CounterBtn.Text);
-	}
+    private void OnPointerMoved(object sender, PointerEventArgs e)
+    {
 
+    }
+
+    private void TapGestureRecognizer_Tapped(object sender, TappedEventArgs e)
+    {
+        if (flagTapStatus)
+        {
+            micButton.Source = "https://i.imgur.com/Tgul0OQ.png";
+            FileStream stream;
+
+            recorder.Detener();
+            flagTapStatus = false;
+
+            string filePath = recorder.OutputFilePath;
+            recorder.Dispose();
+            byte[] fileBytes = File.ReadAllBytes(filePath);
+            stream = new(filePath, FileMode.Open);
+            Task.Run(() =>
+            IttRequest.Upload("https://localhost:7058/analizar", "file", stream, fileBytes));
+
+
+        }
+        else
+        {
+            micButton.Source = "https://i.imgur.com/xHjH5ac.png";
+            Task.Run(() =>
+            {
+
+
+                recorder = new Recorder();
+                recorder.FileName = Guid.NewGuid().ToString() + DateTime.Now.Date.ToString("yyyy-mm-dd") + ".wav";
+                recorder.Iniciar();
+                flagTapStatus = true;
+             
+            });
+          
+        }
+    }
 }
+
 
 
 

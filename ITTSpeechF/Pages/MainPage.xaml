@@ -2,12 +2,44 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ITTSpeechF.MainPage"
-             xmlns:ittspeech="clr-namespace:ITTSpeechF.Controls.User"
+             xmlns:customUser="clr-namespace:ITTSpeechF.Controls.User"
+             xmlns:customButtons ="clr-namespace:ITTSpeechF.Controls.Buttons"
+             xmlns:customPopups ="clr-namespace:ITTSpeechF.Controls.Popups"
              Title="ITTSpeech"
              >
+    
     <ScrollView BackgroundColor="white">
-        <ittspeech:NewContent1 VerticalOptions="Start"></ittspeech:NewContent1>
 
+        <StackLayout VerticalOptions="Start">
+
+            <customUser:UserImage VerticalOptions="Start"></customUser:UserImage>
+            <FlexLayout WidthRequest="180" HeightRequest="40"
+                        JustifyContent="SpaceBetween"
+                        Margin="0,15,0,0"
+                        >
+                <customButtons:TileButton WidthRequest="40" Source="https://i.imgur.com/omHSKy4.png"></customButtons:TileButton>
+                <customButtons:TileButton WidthRequest="40" Source="https://i.imgur.com/PbknVPp.png"></customButtons:TileButton>
+                <customButtons:TileButton WidthRequest="40" Source="https://i.imgur.com/3e5si9N.png"></customButtons:TileButton>
+
+            </FlexLayout>
+            <customButtons:CircleButton Margin="0,80,0,0"
+                                        WidthRequest="64"
+                                        HeightRequest="64"
+                                        Source="https://i.imgur.com/Tgul0OQ.png"
+                                        x:Name="micButton"
+                                       >
+                <customButtons:CircleButton.GestureRecognizers>
+                    <PointerGestureRecognizer PointerEntered="OnPointerEntered"
+                                  PointerExited="OnPointerExited"
+                                  PointerMoved="OnPointerMoved" />
+                    <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="TapGestureRecognizer_Tapped" />
+
+                </customButtons:CircleButton.GestureRecognizers>
+
+
+
+            </customButtons:CircleButton>
+        </StackLayout>
     </ScrollView>
 
 </ContentPage>

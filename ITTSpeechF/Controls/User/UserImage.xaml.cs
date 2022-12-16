@@ -3,7 +3,7 @@ using System.Reflection;
 
 namespace ITTSpeechF.Controls.User;
 
-public partial class NewContent1 : Grid
+public partial class UserImage : Grid
 {
     //public static readonly BindableProperty VerticalAlignProperty = BindableProperty.Create(
     //       propertyName: nameof(VerticalAlign),
@@ -24,7 +24,7 @@ public partial class NewContent1 : Grid
  //          defaultBindingMode: BindingMode.OneWay
  //       ); 
  //   public new Color BackgroundColor { get; set; }
-   public NewContent1()
+   public UserImage()
 {
     
         InitializeComponent();

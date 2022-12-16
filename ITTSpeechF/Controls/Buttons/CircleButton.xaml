@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ImageButton xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ITTSpeechF.Controls.Buttons.CircleButton"
+             WidthRequest="64"
+             
+             HeightRequest="64"
+             BackgroundColor="#4a366a"
+             BorderColor="#5c4484"
+             BorderWidth="1"
+             CornerRadius="40">
+    
+    <ImageButton.Shadow >
+        <Shadow Brush="Black"
+                Offset="2,2"
+                Radius="4"></Shadow>
+    </ImageButton.Shadow>
+
+
+</ImageButton>

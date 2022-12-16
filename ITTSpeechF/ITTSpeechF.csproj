@@ -50,16 +50,33 @@
 	</ItemGroup>
 
 	<ItemGroup>
+		<PackageReference Include="CommunityToolkit.Maui" Version="3.0.0" />
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="7.0.0" />
+		<PackageReference Include="NAudio" Version="2.1.0" />
 	</ItemGroup>
 
 	<ItemGroup>
+	  <Compile Update="Controls\Buttons\CircleButton.xaml.cs">
+	    <DependentUpon>CircleButton.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Controls\Popups\SPopup.xaml.cs">
+	    <DependentUpon>SPopup.xaml</DependentUpon>
+	  </Compile>
 	  <Compile Update="Controls\User\UserImage.xaml.cs">
 	    <DependentUpon>UserImage.xaml</DependentUpon>
 	  </Compile>
 	</ItemGroup>
 
 	<ItemGroup>
+	  <MauiXaml Update="Controls\Buttons\CircleButton.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Controls\Buttons\TileButton.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Controls\Popups\SPopup.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Controls\User\UserImage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
